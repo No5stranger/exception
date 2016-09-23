@@ -1,10 +1,14 @@
 {
-    "name": "illuminate/exception",
+    "name": "eleme/exception",
     "license": "MIT",
     "authors": [
         {
             "name": "Taylor Otwell",
             "email": "taylorotwell@gmail.com"
+        },
+        {
+            "name": "Jianpei Chen",
+            "email": "No5stranger@gmail.com"
         }
     ],
     "require": {
