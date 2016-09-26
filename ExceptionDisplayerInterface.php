@@ -1,7 +1,5 @@
 <?php namespace Illuminate\Exception;
 
-use Exception;
-
 interface ExceptionDisplayerInterface {
 
 	/**
@@ -9,6 +7,6 @@ interface ExceptionDisplayerInterface {
 	 *
 	 * @param  \Exception  $exception
 	 */
-	public function display(Exception $exception);
+	public function display($exception);
 
 }

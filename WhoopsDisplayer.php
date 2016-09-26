@@ -1,6 +1,5 @@
 <?php namespace Illuminate\Exception;
 
-use Exception;
 use Whoops\Run;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
@@ -40,7 +39,7 @@ class WhoopsDisplayer implements ExceptionDisplayerInterface {
 	 * @param  \Exception  $exception
 	 * @return \Symfony\Component\HttpFoundation\Response
 	 */
-	public function display(Exception $exception)
+	public function display($exception)
 	{
 		$status = $exception instanceof HttpExceptionInterface ? $exception->getStatusCode() : 500;
 
