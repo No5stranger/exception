@@ -27,10 +27,5 @@
             "Illuminate\\Exception\\": ""
         }
     },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "eleme-dev"
-        }
-    },
     "minimum-stability": "dev"
 }
