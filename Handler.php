@@ -4,13 +4,12 @@ use Closure;
 use Exception;
 use ErrorException;
 use ReflectionFunction;
-use Illuminate\Contracts\Support\ResponsePreparer;
-use Illuminate\Contracts\Exception\Handler as HandlerContract;
+use Illuminate\Support\Contracts\ResponsePreparerInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 use Symfony\Component\Debug\Exception\FatalErrorException as FatalError;
 
-class Handler implements HandlerContract {
+class Handler {
 
 	/**
 	 * The response preparer implementation.
@@ -63,7 +62,7 @@ class Handler implements HandlerContract {
 	 * @param  bool  $debug
 	 * @return void
 	 */
-	public function __construct(ResponsePreparer $responsePreparer,
+	public function __construct(ResponsePreparerInterface $responsePreparer,
                                 ExceptionDisplayerInterface $plainDisplayer,
                                 ExceptionDisplayerInterface $debugDisplayer,
                                 $debug = true)
@@ -144,7 +143,7 @@ class Handler implements HandlerContract {
 	 * @param  \Exception  $exception
 	 * @return \Symfony\Component\HttpFoundation\Response
 	 */
-	public function handleException(Exception $exception)
+	public function handleException($exception)
 	{
 		$response = $this->callCustomHandlers($exception);
 
@@ -319,7 +318,7 @@ class Handler implements HandlerContract {
 	 * @param  \Exception  $e
 	 * @return string
 	 */
-	protected function formatException(\Exception $e)
+	protected function formatException($e)
 	{
 		if ($this->debug)
 		{
